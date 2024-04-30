@@ -1,0 +1,18 @@
+version: "3"
+services:
+  directus:
+    image: directus/directus:10.10.5
+    ports:
+      - 8055:8055
+    volumes:
+      - ./database:/directus/database
+      - ./uploads:/directus/uploads
+      - ./extensions:/directus/extensions
+    environment:
+      KEY: "xxx"
+      SECRET: "xxx"
+      ADMIN_EMAIL: "divanshthebest@gmail.com"
+      ADMIN_PASSWORD: "x"
+      DB_CLIENT: "sqlite3"
+      DB_FILENAME: "/directus/database/data.db"
+      WEBSOCKETS_ENABLED: "true"
